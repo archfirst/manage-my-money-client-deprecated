@@ -9,7 +9,7 @@
     - On OSX you can alleviate the need to run as sudo by [following John Papa's instructions](http://jpapa.me/nomoresudo)
 - Open terminal
 - Type `npm install -g node-inspector bower gulp`
-- Install and run [Manage My Money Server](A sample application to demonstrate best practices in Node.js, REST and Bookshelf). The client makes API calls to this server to get its data.
+- Install and run [Manage My Money Server](https://github.com/archfirst/manage-my-money-server). The client makes API calls to this server to get its data.
 
 ## Quick Start
 Clone this repo and run the content locally:
