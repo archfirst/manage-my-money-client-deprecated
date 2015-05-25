@@ -1,0 +1,5 @@
+<ul class="nav nav-sidebar">
+    <li data-ng-repeat="a in accounts" ui-sref-active="active">
+        <a ui-sref="accounts.detail({accountId: a.id})">{{a.name}}</a>
+    </li>
+</ul>

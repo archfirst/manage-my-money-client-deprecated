@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th class="transactions-columnId">Id</th>
+            <th class="transactions-columnDate">Date</th>
+            <th class="transactions-columnPayee">Payee</th>
+            <th class="transactions-columnMemo">Memo</th>
+            <th class="transactions-columnCategory">Category</th>
+            <th class="transactions-columnAmount">Amount</th>
+            <th class="transactions-columnBalance">Balance</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr data-ng-repeat="t in vm.transactions">
+            <td>{{t.id}}</td>
+            <td>{{t.txn_date}}</td>
+            <td>{{t.payee}}</td>
+            <td>{{t.memo}}</td>
+            <td>{{t.category.name}}</td>
+            <td>{{t.amount}}</td>
+            <td>{{t.balance}}</td>
+        </tr>
+    </tbody>
+</table>

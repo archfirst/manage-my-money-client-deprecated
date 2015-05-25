@@ -1,0 +1,27 @@
+/* -----------------------------------------------------------------------------
+ * variables
+ * -------------------------------------------------------------------------- */
+
+/* ----- Colors ----- */
+$color-black:                    #000000;
+$color-accent:                   #D26420;
+$color-accent-weak:              #E5A100;
+$color-marker1-strong:           #004734;
+$color-marker1-normal:           #166E42;
+$color-marker1-weak:             #269960;
+$color-marker2-vstrong:          #193661;
+$color-marker2-strong:           #005A96;
+$color-marker2-normal:           #008DB8;
+$color-marker2-weak:             #40D9FF;
+$color-neutral-strong:           #4D4D4D;
+$color-neutral-normal:           #8F8F8F;
+$color-neutral-weak:             #B8B8B8;
+$color-faint:                    #E5E5E5;
+$color-white:                    #FFFFFF;
+
+// -------------------------
+// Bootstrap Overrides
+// -------------------------
+
+/* ----- Typography ----- */
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
