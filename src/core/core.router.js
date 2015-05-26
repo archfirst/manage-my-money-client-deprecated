@@ -25,13 +25,13 @@
             })
             .state('accounts.detail', {
                 url: '/:accountId',
-                templateUrl: 'components/accounts/transactions-panel/transactions-panel.html',
+                template: '<mmm-transactions-panel data-transactions="vm.transactions"></mmm-transactions-panel>',
                 resolve: {
                     transactions: function(transactionService, $stateParams) {
                         return transactionService.getTransactions($stateParams.accountId);
                     }
                 },
-                // intermediate controller to capture the result of resolve and pass it to the people directive
+                // intermediate controller to capture the result of resolve and pass it to the transactions panel directive
                 controller: ['transactions', function(transactions) { this.transactions = transactions; }],
                 controllerAs: 'vm'
             });

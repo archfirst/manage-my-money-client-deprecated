@@ -18,14 +18,18 @@
 
         function getTransactions(accountId) {
             return $http.get(api + '/transactions?account=' + accountId)
-                .then(getTransactionsComplete)
+                .then(getTransactionsSuccess)
                 .catch(function(message) {
                     exception.catcher('XHR Failed for getTransactions')(message);
                     $location.url('/');
                 });
 
-            function getTransactionsComplete(data) {
-                return data.data;
+            function getTransactionsSuccess(response) {
+                // Sort by date and id
+
+                // Compute balances
+
+                return response.data;
             }
         }
     }

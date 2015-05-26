@@ -2,25 +2,27 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th class="transactions-columnId">Id</th>
-            <th class="transactions-columnDate">Date</th>
+            <th class="transactions-columnId text-right">Id</th>
+            <th class="transactions-columnDate text-right">Date</th>
             <th class="transactions-columnPayee">Payee</th>
             <th class="transactions-columnMemo">Memo</th>
             <th class="transactions-columnCategory">Category</th>
-            <th class="transactions-columnAmount">Amount</th>
-            <th class="transactions-columnBalance">Balance</th>
+            <th class="transactions-columnPayment text-right">Payment</th>
+            <th class="transactions-columnDeposit text-right">Deposit</th>
+            <th class="transactions-columnBalance text-right">Balance</th>
         </tr>
         </thead>
 
         <tbody>
-        <tr data-ng-repeat="t in vm.transactions">
-            <td>{{t.id}}</td>
-            <td>{{t.txn_date}}</td>
+        <tr data-ng-repeat="t in transactions">
+            <td class="text-right">{{t.id}}</td>
+            <td class="text-right">{{t.txn_date | date : 'MM/dd/yyyy' : 'UTC'}}</td>
             <td>{{t.payee}}</td>
             <td>{{t.memo}}</td>
             <td>{{t.category.name}}</td>
-            <td>{{t.amount}}</td>
-            <td>{{t.balance}}</td>
+            <td class="text-right">{{t.amount | payment}}</td>
+            <td class="text-right">{{t.amount | deposit}}</td>
+            <td class="text-right">{{t.balance}}</td>
         </tr>
         </tbody>
     </table>
