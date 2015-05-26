@@ -17,7 +17,7 @@
         return service;
 
         function getTransactions(accountId) {
-            return $http.get(api + '/transactions?account_id=' + accountId)
+            return $http.get(api + '/transactions?account=' + accountId)
                 .then(getTransactionsComplete)
                 .catch(function(message) {
                     exception.catcher('XHR Failed for getTransactions')(message);
