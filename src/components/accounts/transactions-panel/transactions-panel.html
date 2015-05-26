@@ -1,5 +1,6 @@
-<table class="table">
-    <thead>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
         <tr>
             <th class="transactions-columnId">Id</th>
             <th class="transactions-columnDate">Date</th>
@@ -9,9 +10,9 @@
             <th class="transactions-columnAmount">Amount</th>
             <th class="transactions-columnBalance">Balance</th>
         </tr>
-    </thead>
+        </thead>
 
-    <tbody>
+        <tbody>
         <tr data-ng-repeat="t in vm.transactions">
             <td>{{t.id}}</td>
             <td>{{t.txn_date}}</td>
@@ -21,5 +22,6 @@
             <td>{{t.amount}}</td>
             <td>{{t.balance}}</td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
