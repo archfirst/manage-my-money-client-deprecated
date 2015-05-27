@@ -33,7 +33,7 @@
                         return transactionService.getTransactions($stateParams.accountId);
                     }
                 },
-                // intermediate controller to capture the result of resolve and pass it to the transactions panel directive
+                // intermediate controller to capture the result of resolve and pass it to the directive
                 controller: ['transactions', function(transactions) {
                     this.transactions = transactions;
                 }],

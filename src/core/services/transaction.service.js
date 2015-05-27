@@ -6,10 +6,10 @@
         .module('app.core')
         .factory('transactionService', transactionService);
 
-    transactionService.$inject = ['$http', '$location', 'exception', 'api'];
+    transactionService.$inject = ['$http', '$location', 'exception', 'api', '_'];
 
     /* @ngInject */
-    function transactionService($http, $location, exception, api) {
+    function transactionService($http, $location, exception, api, _) {
         var service = {
             getTransactions: getTransactions
         };
