@@ -4,6 +4,10 @@
   table-layout: fixed;
 }
 
+.transactions tbody tr {
+  cursor: pointer;
+}
+
 .transactions-columnDate {
   width: 90px;
 }

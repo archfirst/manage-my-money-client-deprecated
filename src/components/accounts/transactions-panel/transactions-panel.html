@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="transactions table table-striped">
+    <table class="transactions table table-hover">
         <thead>
         <tr>
             <th class="transactions-columnDate">Date</th>
@@ -14,7 +14,7 @@
         </thead>
 
         <tbody>
-        <tr data-ng-repeat="t in transactions">
+        <tr data-ng-repeat="t in transactions" data-ng-click="vm.handleTransactionClicked(t.id, $event)">
             <td class="transactions-columnDate">{{t.txn_date | date : 'MM/dd/yyyy' : 'UTC'}}</td>
             <td class="transactions-columnPayee">{{t.payee}}</td>
             <td class="transactions-columnMemo">{{t.memo}}</td>

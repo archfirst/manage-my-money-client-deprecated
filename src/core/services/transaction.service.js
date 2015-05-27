@@ -33,8 +33,8 @@
                     transaction.txn_date = new Date(transaction.txn_date);
                 });
 
-                // Sort by date
-                transactions = _.sortBy(transactions, 'txn_date');
+                // Sort by date (descending)
+                transactions = _.sortByOrder(transactions, ['txn_date'], [false]);
 
                 // Compute balances
                 _.each(transactions, function(transaction, index, transactions) {
