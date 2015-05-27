@@ -2,29 +2,17 @@
 
 .accountsPanel {
   float: left;
-  width: 30%;
+  width: 25%;
 }
 
 .transactionsPanel {
   float: left;
-  width: 70%;
-  margin-left: 30%;
+  width: 75%;
+  margin-left: 25%;
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
-  .accountsPanel {
-    width: 25%;
-  }
-
-  .transactionsPanel {
-    width: 75%;
-    margin-left: 25%;
-  }
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: $screen-md-min) {
   .accountsPanel {
     width: 20%;
   }
@@ -35,8 +23,8 @@
   }
 }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: $screen-lg-min) {
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
   .accountsPanel {
     width: 15%;
   }
@@ -46,3 +34,7 @@
     margin-left: 15%;
   }
 }
+
+/* ----- transactions-panel ----- */
+
+@import "transactions-panel/transactions-panel";

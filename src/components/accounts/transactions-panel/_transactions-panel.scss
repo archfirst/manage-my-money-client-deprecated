@@ -1,0 +1,75 @@
+/* ----- transactions-panel ----- */
+
+.transactions {
+  table-layout: fixed;
+}
+
+.transactions-columnDate {
+  width: 90px;
+}
+
+.transactions-columnPayee {
+  @include text-overflow();
+}
+
+.transactions-columnMemo {
+  display: none;
+  @include text-overflow();
+}
+
+.transactions-columnCategory {
+  display: none;
+  width: 160px;
+}
+
+.transactions-columnAmount {
+  width: 115px;
+}
+
+.transactions-columnPayment {
+  display: none;
+  width: 115px;
+}
+
+.transactions-columnDeposit {
+  display: none;
+  width: 115px;
+}
+
+.transactions-columnBalance {
+  display: none;
+  width: 115px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .transactions-columnAmount {
+    display: none;
+  }
+
+  .transactions-columnPayment {
+    display: table-cell;
+  }
+
+  .transactions-columnDeposit {
+    display: table-cell;
+  }
+
+  .transactions-columnBalance {
+    display: table-cell;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  .transactions-columnCategory {
+    display: table-cell;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+  .transactions-columnMemo {
+    display: table-cell;
+  }
+}
