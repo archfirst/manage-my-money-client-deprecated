@@ -22,7 +22,7 @@
             <td>{{t.category.name}}</td>
             <td class="text-right">{{t.amount | payment}}</td>
             <td class="text-right">{{t.amount | deposit}}</td>
-            <td class="text-right">{{t.balance}}</td>
+            <td class="text-right">{{t.balance | number:2}}</td>
         </tr>
         </tbody>
     </table>

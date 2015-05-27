@@ -25,11 +25,28 @@
                 });
 
             function getTransactionsSuccess(response) {
-                // Sort by date and id
+
+                var transactions = response.data;
+
+                // Convert txn_date from String to Date
+                _.each(transactions, function(transaction) {
+                    transaction.txn_date = new Date(transaction.txn_date);
+                });
+
+                // Sort by date
+                transactions = _.sortBy(transactions, 'txn_date');
 
                 // Compute balances
+                _.each(transactions, function(transaction, index, transactions) {
+                    if (index === 0) {
+                        transaction.balance = transaction.amount;
+                    }
+                    else {
+                        transaction.balance = transactions[index - 1].balance + transaction.amount;
+                    }
+                });
 
-                return response.data;
+                return transactions;
             }
         }
     }
