@@ -28,11 +28,14 @@
             // Make a local copy of the transaction that was passed in
             var txn = angular.copy(transaction);
 
-            if (txn.amount < 0) {
-                txn.payment = -(txn.amount);
-            }
-            else {
-                txn.deposit = txn.amount;
+            // If the amount is specified, then fill in payment or deposit
+            if (txn.amount) {
+                if (txn.amount < 0) {
+                    txn.payment = -(txn.amount);
+                }
+                else {
+                    txn.deposit = txn.amount;
+                }
             }
 
             vm.txn = txn;
