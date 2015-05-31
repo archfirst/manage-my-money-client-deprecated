@@ -14,11 +14,12 @@
     function TransactionDialogController(
         $modalInstance, accountService, categoryService, transactionService, transaction) {
         var vm = this;
-        vm.ok = ok;
-        vm.cancel = cancel;
+        vm.title = transaction.id ? 'Edit Transaction' : 'Add Transaction';
         vm.accounts = null;
         vm.categories = null;
         vm.txn = null;
+        vm.ok = ok;
+        vm.cancel = cancel;
 
         initTxn();
         activate();

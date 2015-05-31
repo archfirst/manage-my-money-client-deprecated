@@ -17,7 +17,7 @@
             restrict: 'E',
             templateUrl: 'components/accounts/transactions-panel/transactions-panel.html',
             scope: {
-                transactions: '='
+                account: '='
             },
             controller: 'TransactionsController',
             controllerAs: 'vm'
@@ -32,9 +32,21 @@
     /* @ngInject */
     function TransactionsController($modal, $state) {
         var vm = this;
-        vm.handleTransactionClicked = handleTransactionClicked;
+        vm.addTransaction = addTransaction;
+        vm.editTransaction = editTransaction;
 
-        function handleTransactionClicked(transaction) {
+        function addTransaction(account_id) {
+            showTransaction({
+                account_id: account_id,
+                txn_date: new Date()
+            });
+        }
+
+        function editTransaction(transaction) {
+            showTransaction(transaction);
+        }
+
+        function showTransaction(transaction) {
             var modalInstance = $modal.open({
                 animation: true,
                 backdrop: 'static',

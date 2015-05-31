@@ -34,8 +34,8 @@
                     transaction.txn_date = new Date(transaction.txn_date);
                 });
 
-                // Sort by date (descending)
-                transactions = _.sortByOrder(transactions, ['txn_date'], [false]);
+                // Sort by date
+                transactions = _.sortBy(transactions, 'txn_date');
 
                 // Compute balances
                 _.each(transactions, function(transaction, index, transactions) {
@@ -46,6 +46,9 @@
                         transaction.balance = transactions[index - 1].balance + transaction.amount;
                     }
                 });
+
+                // Reverse the array to show transactions in descending order
+                transactions.reverse();
 
                 return transactions;
             }

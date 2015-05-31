@@ -29,15 +29,22 @@
                 url: '/:accountId',
                 /* jshint maxlen:false */
                 /* jscs:disable maximumLineLength */
-                template: '<mmm-transactions-panel class="transactionsPanel" data-transactions="vm.transactions"></mmm-transactions-panel>',
+                template: '<mmm-transactions-panel class="transactionsPanel" data-account="vm.account"></mmm-transactions-panel>',
                 resolve: {
-                    transactions: function(transactionService, $stateParams) {
-                        return transactionService.getTransactions($stateParams.accountId);
+                    account: function(transactionService, $stateParams) {
+                        var accountId = parseInt($stateParams.accountId, 0);
+                        return transactionService.getTransactions(accountId)
+                            .then(function(transactions) {
+                                return {
+                                    id: accountId,
+                                    transactions: transactions
+                                };
+                            });
                     }
                 },
                 // intermediate controller to capture the result of resolve and pass it to the directive
-                controller: ['transactions', function(transactions) {
-                    this.transactions = transactions;
+                controller: ['account', function(account) {
+                    this.account = account;
                 }],
                 controllerAs: 'vm'
             });

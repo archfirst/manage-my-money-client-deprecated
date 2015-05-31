@@ -1,3 +1,8 @@
+<header class="transactionsPanel-header">
+    <button class="btn btn-info" ng-click="vm.addTransaction(account.id)">Add Transaction</button>
+</header>
+
+
 <div class="table-responsive">
     <table class="transactions table table-hover">
         <thead>
@@ -14,7 +19,7 @@
         </thead>
 
         <tbody>
-        <tr data-ng-repeat="t in transactions" data-ng-click="vm.handleTransactionClicked(t, $event)">
+        <tr data-ng-repeat="t in account.transactions" data-ng-click="vm.editTransaction(t, $event)">
             <td class="transactions-columnDate">{{t.txn_date | date : 'MM/dd/yyyy' : 'UTC'}}</td>
             <td class="transactions-columnPayee">{{t.payee}}</td>
             <td class="transactions-columnMemo">{{t.memo}}</td>
