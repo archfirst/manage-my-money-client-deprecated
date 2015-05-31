@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
     'use strict';
 
@@ -27,21 +27,32 @@
     }
 
     // ----- TransactionsController -----
-    TransactionsController.$inject = [];
+    TransactionsController.$inject = ['$modal', '$state'];
 
     /* @ngInject */
-    function TransactionsController($scope) {
+    function TransactionsController($modal, $state) {
         var vm = this;
-        vm.selectedTransactionId = null;
         vm.handleTransactionClicked = handleTransactionClicked;
 
-        function handleTransactionClicked(selectedTransactionId, $event) {
+        function handleTransactionClicked(transaction) {
+            var modalInstance = $modal.open({
+                animation: true,
+                backdrop: 'static',
+                templateUrl: 'components/accounts/transaction-dialog/transaction-dialog.html',
+                size: 'sm',
+                controller: 'TransactionDialogController',
+                controllerAs: 'vm',
+                resolve: {
+                    transaction: function() {
+                        return transaction;
+                    }
+                }
+            });
 
-            vm.selectedTransactionId = selectedTransactionId;
-
-            var rowClicked = $event.currentTarget;
-
-            // Edit the transaction
+            modalInstance.result
+                .then( function(transaction) {
+                    $state.go('accounts.detail', { accountId: transaction.account_id }, { reload: true });
+                });
         }
     }
 

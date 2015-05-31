@@ -14,7 +14,7 @@
         </thead>
 
         <tbody>
-        <tr data-ng-repeat="t in transactions" data-ng-click="vm.handleTransactionClicked(t.id, $event)">
+        <tr data-ng-repeat="t in transactions" data-ng-click="vm.handleTransactionClicked(t, $event)">
             <td class="transactions-columnDate">{{t.txn_date | date : 'MM/dd/yyyy' : 'UTC'}}</td>
             <td class="transactions-columnPayee">{{t.payee}}</td>
             <td class="transactions-columnMemo">{{t.memo}}</td>

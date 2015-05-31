@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
     'use strict';
 
@@ -36,13 +36,13 @@
         activate();
 
         function activate() {
-            return getAccounts().then(function () {
+            return getAccounts().then(function() {
                 logger.info('Activated Accounts View');
             });
         }
 
         function getAccounts() {
-            return accountService.getAccounts().then(function (data) {
+            return accountService.getAccounts().then(function(data) {
 
                 vm.accounts = data;
                 return vm.accounts;

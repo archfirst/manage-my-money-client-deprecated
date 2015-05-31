@@ -17,15 +17,15 @@
         return service;
 
         function getAccounts() {
-            return $http.get(api + '/accounts')
-                .then(getAccountsComplete)
+            return $http.get(api + '/accounts', { cache: true })
+                .then(getAccountsSuccess)
                 .catch(function(message) {
                     exception.catcher('XHR Failed for getAccounts')(message);
                     $location.url('/');
                 });
 
-            function getAccountsComplete(data) {
-                return data.data;
+            function getAccountsSuccess(response) {
+                return response.data;
             }
         }
     }

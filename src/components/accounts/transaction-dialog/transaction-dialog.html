@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <h3 class="modal-title">Edit Transaction</h3>
+</div>
+
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label for="account">Account</label>
+            <select class="form-control" id="account"
+                    ng-model="vm.txn.account_id" ng-options="account.id as account.name for account in vm.accounts">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="txn_date">Transaction Date</label>
+            <input type="date" class="form-control" id="txn_date" placeholder="Enter transaction date"
+                   ng-model="vm.txn.txn_date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="payee">Payee</label>
+            <input type="text" class="form-control" id="payee" placeholder="Enter payee"
+                    ng-model="vm.txn.payee" required>
+        </div>
+
+        <div class="form-group">
+            <label for="memo">Memo</label>
+            <input type="text" class="form-control" id="memo" placeholder="Enter memo"
+                   ng-model="vm.txn.memo">
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" id="category"
+                    ng-model="vm.txn.category_id" ng-options="c.id as c.name for c in vm.categories">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="payment">Payment</label>
+            <input type="number" class="form-control" id="payment" placeholder="Enter payment"
+                   ng-model="vm.txn.payment">
+        </div>
+
+        <div class="form-group">
+            <label for="deposit">Deposit</label>
+            <input type="number" class="form-control" id="deposit" placeholder="Enter deposit"
+                   ng-model="vm.txn.deposit">
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="vm.ok()">OK</button>
+    <button class="btn btn-warning" ng-click="vm.cancel()">Cancel</button>
+</div>

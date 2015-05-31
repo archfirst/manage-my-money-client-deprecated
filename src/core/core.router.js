@@ -27,7 +27,9 @@
 
             .state('accounts.detail', {
                 url: '/:accountId',
-                template: '<mmm-transactions-panel data-transactions="vm.transactions"></mmm-transactions-panel>',
+                /* jshint maxlen:false */
+                /* jscs:disable maximumLineLength */
+                template: '<mmm-transactions-panel class="transactionsPanel" data-transactions="vm.transactions"></mmm-transactions-panel>',
                 resolve: {
                     transactions: function(transactionService, $stateParams) {
                         return transactionService.getTransactions($stateParams.accountId);
