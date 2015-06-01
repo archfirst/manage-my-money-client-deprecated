@@ -63,6 +63,7 @@
 
     <div class="modal-footer">
         <button type="submit" class="btn btn-info" ng-disabled="transactionForm.$invalid">OK</button>
+        <button type="button" class="btn btn-danger" ng-show="vm.txn.id > 0" ng-click="vm.deleteTransaction()">Delete</button>
         <button type="button" class="btn btn-default" ng-click="vm.cancel()">Cancel</button>
     </div>
 </form>

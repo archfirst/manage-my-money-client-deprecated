@@ -12,7 +12,8 @@
     function transactionService($http, $location, exception, api, _) {
         var service = {
             getTransactions: getTransactions,
-            saveTransaction: saveTransaction
+            saveTransaction: saveTransaction,
+            deleteTransaction: deleteTransaction
         };
 
         return service;
@@ -89,6 +90,10 @@
                 txnSaved.txn_date = new Date(txnSaved.txn_date);
                 return txnSaved;
             }
+        }
+
+        function deleteTransaction(id) {
+            return $http.delete(api + '/transactions/' + id);
         }
     }
 })();

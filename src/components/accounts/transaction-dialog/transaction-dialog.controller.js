@@ -21,6 +21,7 @@
         vm.paymentChanged = paymentChanged;
         vm.depositChanged = depositChanged;
         vm.ok = ok;
+        vm.deleteTransaction = deleteTransaction;
         vm.cancel = cancel;
 
         initTxn();
@@ -82,6 +83,14 @@
             transactionService.saveTransaction(txn)
                 .then(function(txnSaved) {
                     $modalInstance.close(txnSaved);
+                });
+        }
+
+        function deleteTransaction() {
+            var txn = vm.txn;
+            transactionService.deleteTransaction(txn.id)
+                .then(function() {
+                    $modalInstance.close(txn);
                 });
         }
 
