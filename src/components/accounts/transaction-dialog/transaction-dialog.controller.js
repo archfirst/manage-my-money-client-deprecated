@@ -18,6 +18,8 @@
         vm.accounts = null;
         vm.categories = null;
         vm.txn = null;
+        vm.paymentChanged = paymentChanged;
+        vm.depositChanged = depositChanged;
         vm.ok = ok;
         vm.cancel = cancel;
 
@@ -51,6 +53,20 @@
                     vm.categories = categories;
                     return vm.categories;
                 });
+        }
+
+        // Only one of payment or deposit should be defined
+        function paymentChanged() {
+            if (vm.txn.payment && vm.txn.deposit) {
+                vm.txn.deposit = undefined;
+            }
+        }
+
+        // Only one of payment or deposit should be defined
+        function depositChanged() {
+            if (vm.txn.payment && vm.txn.deposit) {
+                vm.txn.payment = undefined;
+            }
         }
 
         function ok() {
