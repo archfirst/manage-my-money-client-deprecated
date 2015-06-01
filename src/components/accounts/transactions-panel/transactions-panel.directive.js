@@ -36,9 +36,14 @@
         vm.editTransaction = editTransaction;
 
         function addTransaction(account_id) {
+            // Get today's date in UTC (discard time)
+            // e.g. 2015-01-01T09:30:00-04:00 ---> 2015-01-01T00:00:00Z
+            var now = new Date();
+            var txn_date = new Date( Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) );
+
             showTransaction({
                 account_id: account_id,
-                txn_date: new Date()
+                txn_date: txn_date
             });
         }
 

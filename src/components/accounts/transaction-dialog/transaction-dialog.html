@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="txn_date">Transaction Date</label>
             <input type="date" class="form-control" id="txn_date" placeholder="Enter transaction date"
-                   ng-model="vm.txn.txn_date" required>
+                   ng-model="vm.txn.txn_date" ng-model-options="{timezone: 'UTC'}" required>
         </div>
 
         <div class="form-group">
