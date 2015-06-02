@@ -37,7 +37,7 @@
 
         function activate() {
             return getAccounts().then(function() {
-                logger.info('Activated Accounts View');
+                logger.log('Activated Accounts View');
             });
         }
 
