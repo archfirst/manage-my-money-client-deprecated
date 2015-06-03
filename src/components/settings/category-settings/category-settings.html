@@ -1,0 +1,32 @@
+<form name="categoryAddForm" class="categoryAddForm" ng-submit="vm.addCategory()" novalidate>
+
+    <input type="text" name="categoryAddForm-name" class="categoryAddForm-name form-control" placeholder="Enter category name"
+           ng-model="vm.addCategoryName" required>
+
+    <button type="submit" class="btn btn-info" ng-disabled="categoryAddForm.$invalid">Add</button>
+
+</form>
+
+
+<ul class="list-group">
+    <li class="categoryItem list-group-item" data-ng-repeat="c in vm.categories"
+            ng-class="{editing: c.id === vm.editedCategory.id}">
+        <div class="categoryView">
+            <span class="categoryView-editicon glyphicon glyphicon-pencil" aria-hidden="true"
+                  data-ng-click="vm.editCategory(c)"></span>
+
+            {{c.name}}
+        </div>
+
+        <form name="categoryForm" class="categoryForm form-inline" ng-submit="vm.saveCategory()" novalidate>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"
+                  data-ng-click="vm.saveCategory()"></span>
+
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"
+                  data-ng-click="vm.cancelEdit()"></span>
+
+            <input type="text" name="categoryName" class="form-control"
+                   ng-model="vm.editedCategory.name" required>
+        </form>
+    </li>
+</ul>

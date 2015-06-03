@@ -1,0 +1,45 @@
+/* -----------------------------------------------------------------------------
+ * category-settings
+ * -------------------------------------------------------------------------- */
+
+/* ----- categoryAddForm ----- */
+.categoryAddForm {
+  margin-bottom: 16px;
+}
+
+.categoryAddForm-name {
+  display: inline;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* ----- categoryItem ----- */
+.categoryItem {
+  > .categoryView {
+    display: block;
+  }
+
+  > .categoryForm {
+    display: none;
+  }
+}
+
+// Switch to category form when the item is being edited
+.categoryItem.editing {
+  > .categoryView {
+    display: none;
+  }
+
+  > .categoryForm {
+    display: block;
+  }
+}
+
+// Turn on visibility of the edit icon when hovering over an category
+.categoryItem .categoryView-editicon {
+  visibility: hidden;
+}
+
+.categoryItem:hover .categoryView-editicon {
+  visibility: visible;
+}

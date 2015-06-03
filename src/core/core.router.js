@@ -57,6 +57,11 @@
             .state('settings.accounts', {
                 url: '/accounts',
                 template: '<mmm-account-settings class="settingsContent"></mmm-account-settings>'
+            })
+
+            .state('settings.categories', {
+                url: '/categories',
+                template: '<mmm-category-settings class="settingsContent"></mmm-category-settings>'
             });
     }
 })();
