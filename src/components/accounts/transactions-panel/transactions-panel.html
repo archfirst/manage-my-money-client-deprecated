@@ -19,7 +19,7 @@
         </thead>
 
         <tbody>
-        <tr data-ng-repeat="t in account.transactions" data-ng-click="vm.editTransaction(t, $event)">
+        <tr data-ng-repeat="t in account.transactions" data-ng-click="vm.editTransaction(t)">
             <td class="transactions-columnDate">{{t.txn_date | date : 'MM/dd/yyyy' : 'UTC'}}</td>
             <td class="transactions-columnPayee">{{t.payee}}</td>
             <td class="transactions-columnMemo">{{t.memo}}</td>

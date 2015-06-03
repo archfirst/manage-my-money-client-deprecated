@@ -6,10 +6,10 @@
         .module('app.core')
         .factory('categoryService', categoryService);
 
-    categoryService.$inject = ['$http', '$location', 'exception', 'api'];
+    categoryService.$inject = ['$http', '$location', 'exception', 'api', '_'];
 
     /* @ngInject */
-    function categoryService($http, $location, exception, api) {
+    function categoryService($http, $location, exception, api, _) {
         var service = {
             getCategories: getCategories
         };
@@ -25,7 +25,12 @@
                 });
 
             function getCategoriesSuccess(response) {
-                return response.data;
+                var categories = response.data;
+
+                // Sort by name
+                categories = _.sortBy(categories, 'name');
+
+                return categories;
             }
         }
     }

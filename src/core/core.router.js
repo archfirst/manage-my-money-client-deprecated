@@ -47,6 +47,16 @@
                     this.account = account;
                 }],
                 controllerAs: 'vm'
+            })
+
+            .state('settings', {
+                url: '/settings',
+                template: '<mmm-settings></mmm-settings>'
+            })
+
+            .state('settings.accounts', {
+                url: '/accounts',
+                template: '<mmm-account-settings class="settingsContent"></mmm-account-settings>'
             });
     }
 })();

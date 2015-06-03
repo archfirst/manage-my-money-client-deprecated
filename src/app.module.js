@@ -8,6 +8,7 @@
         // Features
         'app.topnav',
         'app.dashboard',
-        'app.accounts'
+        'app.accounts',
+        'app.settings'
     ]);
 })();

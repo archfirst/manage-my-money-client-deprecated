@@ -1,0 +1,41 @@
+/* ----- settings ----- */
+
+.settingsNav {
+  float: left;
+  width: 25%;
+}
+
+.settingsContent {
+  float: left;
+  width: 75%;
+  margin-left: 25%;
+  padding: 16px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .settingsNav {
+    width: 20%;
+  }
+
+  .settingsContent {
+    width: 80%;
+    margin-left: 20%;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  .settingsNav {
+    width: 15%;
+  }
+
+  .settingsContent {
+    width: 85%;
+    margin-left: 15%;
+  }
+}
+
+/* ----- account-settings ----- */
+
+@import "account-settings/account-settings";

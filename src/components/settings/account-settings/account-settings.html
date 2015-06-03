@@ -1,0 +1,32 @@
+<form name="accountAddForm" class="accountAddForm" ng-submit="vm.addAccount()" novalidate>
+
+    <input type="text" name="accountAddForm-name" class="accountAddForm-name form-control" placeholder="Enter account name"
+           ng-model="vm.addAccountName" required>
+
+    <button type="submit" class="btn btn-info" ng-disabled="addAccountForm.$invalid">Add</button>
+
+</form>
+
+
+<ul class="list-group">
+    <li class="accountItem list-group-item" data-ng-repeat="a in vm.accounts"
+            ng-class="{editing: a.id === vm.editedAccount.id}">
+        <div class="accountView">
+            <span class="accountView-editicon glyphicon glyphicon-pencil" aria-hidden="true"
+                  data-ng-click="vm.editAccount(a)"></span>
+
+            {{a.name}}
+        </div>
+
+        <form name="accountForm" class="accountForm form-inline" ng-submit="vm.saveAccount()" novalidate>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"
+                  data-ng-click="vm.saveAccount()"></span>
+
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"
+                  data-ng-click="vm.cancelEdit()"></span>
+
+            <input type="text" name="accountName" class="form-control"
+                   ng-model="vm.editedAccount.name" required>
+        </form>
+    </li>
+</ul>

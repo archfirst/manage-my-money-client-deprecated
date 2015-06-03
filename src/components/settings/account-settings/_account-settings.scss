@@ -1,0 +1,45 @@
+/* -----------------------------------------------------------------------------
+ * account-settings
+ * -------------------------------------------------------------------------- */
+
+/* ----- accountAddForm ----- */
+.accountAddForm {
+  margin-bottom: 16px;
+}
+
+.accountAddForm-name {
+  display: inline;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* ----- accountItem ----- */
+.accountItem {
+  > .accountView {
+    display: block;
+  }
+
+  > .accountForm {
+    display: none;
+  }
+}
+
+// Switch to account form when the item is being edited
+.accountItem.editing {
+  > .accountView {
+    display: none;
+  }
+
+  > .accountForm {
+    display: block;
+  }
+}
+
+// Turn on visibility of the edit icon when hovering over an account
+.accountItem .accountView-editicon {
+  visibility: hidden;
+}
+
+.accountItem:hover .accountView-editicon {
+  visibility: visible;
+}
