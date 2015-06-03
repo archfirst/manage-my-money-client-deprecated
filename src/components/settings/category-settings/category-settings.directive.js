@@ -81,7 +81,10 @@
         }
 
         function editCategory(category) {
-            vm.editedCategory = angular.copy(category);
+            // Allow edit if no category is being edited or if the click is on a different category
+            if ( (vm.editedCategory === null) || (vm.editedCategory.id !== category.id) ) {
+                vm.editedCategory = angular.copy(category);
+            }
         }
 
         function cancelEdit() {

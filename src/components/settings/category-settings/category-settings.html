@@ -10,23 +10,22 @@
 
 <ul class="list-group">
     <li class="categoryItem list-group-item" data-ng-repeat="c in vm.categories"
-            ng-class="{editing: c.id === vm.editedCategory.id}">
+            ng-class="{editing: c.id === vm.editedCategory.id}" ng-click="vm.editCategory(c)">
         <div class="categoryView">
-            <span class="categoryView-editicon glyphicon glyphicon-pencil" aria-hidden="true"
-                  data-ng-click="vm.editCategory(c)"></span>
-
             {{c.name}}
         </div>
 
-        <form name="categoryForm" class="categoryForm form-inline" ng-submit="vm.saveCategory()" novalidate>
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"
-                  data-ng-click="vm.saveCategory()"></span>
-
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"
-                  data-ng-click="vm.cancelEdit()"></span>
-
-            <input type="text" name="categoryName" class="form-control"
+        <form name="categoryForm" class="categoryForm" ng-submit="vm.saveCategory()" novalidate>
+            <input type="text" name="categoryForm-name" class="categoryForm-name form-control"
                    ng-model="vm.editedCategory.name" required>
+
+            <button type="submit" class="btn btn-info btn-xs" ng-disabled="categoryForm.$invalid">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            </button>
+
+            <button type="button" class="btn btn-default btn-xs" ng-click="vm.cancelEdit(); $event.stopPropagation();">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
         </form>
     </li>
 </ul>

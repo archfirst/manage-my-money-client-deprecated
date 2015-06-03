@@ -15,6 +15,8 @@
 
 /* ----- accountItem ----- */
 .accountItem {
+  cursor: pointer;
+
   > .accountView {
     display: block;
   }
@@ -35,11 +37,9 @@
   }
 }
 
-// Turn on visibility of the edit icon when hovering over an account
-.accountItem .accountView-editicon {
-  visibility: hidden;
-}
-
-.accountItem:hover .accountView-editicon {
-  visibility: visible;
+/* ----- accountForm ----- */
+.accountForm-name {
+  display: inline;
+  width: auto;
+  vertical-align: middle;
 }

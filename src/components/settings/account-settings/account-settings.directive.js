@@ -81,7 +81,10 @@
         }
 
         function editAccount(account) {
-            vm.editedAccount = angular.copy(account);
+            // Allow edit if no account is being edited or if the click is on a different account
+            if ( (vm.editedAccount === null) || (vm.editedAccount.id !== account.id) ) {
+                vm.editedAccount = angular.copy(account);
+            }
         }
 
         function cancelEdit() {
