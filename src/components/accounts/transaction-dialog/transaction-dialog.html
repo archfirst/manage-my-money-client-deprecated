@@ -42,6 +42,8 @@
             <label for="category">Category</label>
             <select id="category" name="category" class="form-control"
                     ng-model="vm.txn.category_id" ng-options="c.id as c.name for c in vm.categories" required>
+                <!-- Workaround for issue in Chrome: https://github.com/angular/angular.js/issues/4836 -->
+                <option value="">Select One</option>
             </select>
             <p ng-show="transactionForm.category.$invalid && !transactionForm.category.$pristine" class="help-block">
                 Category is required.
