@@ -2,7 +2,7 @@
 
     <h1>Transactions by Category</h1>
     <h2 ng-if="vm.startDate">
-        From {{vm.startDate | date : 'M/dd/yyyy' : 'UTC'}} to {{vm.endDate | date : 'M/dd/yyyy' : 'UTC'}}
+        From {{vm.startDate | date : 'M/d/yyyy' : 'UTC'}} to {{vm.endDate | date : 'M/d/yyyy' : 'UTC'}}
     </h2>
     <h2 ng-if="!vm.startDate">
         For all time
