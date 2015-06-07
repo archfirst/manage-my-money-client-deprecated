@@ -1,5 +1,7 @@
 # Manage My Money Client
-*Manage My Money* is a simple application to record your income and expenses. It demonstrates best practices in developing applications using AngularJS. The application is based on the [Angular Template](https://github.com/archfirst/angular-template) to provide the basic application structure and build system.
+![Dashboard](assets/dashboard.png)
+
+*Manage My Money* is a simple application to record and analyze your income and expenses. It demonstrates best practices in developing applications using AngularJS. The application is based on the [Angular Template](https://github.com/archfirst/angular-template) to provide the basic application structure and build system.
 
 ## Requirements
 
