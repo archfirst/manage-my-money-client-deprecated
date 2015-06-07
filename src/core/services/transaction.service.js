@@ -6,12 +6,13 @@
         .module('app.core')
         .factory('transactionService', transactionService);
 
-    transactionService.$inject = ['$http', '$location', 'exception', 'api', '_'];
+    transactionService.$inject = ['$http', '$location', '$filter', 'exception', 'api', '_'];
 
     /* @ngInject */
-    function transactionService($http, $location, exception, api, _) {
+    function transactionService($http, $location, $filter, exception, api, _) {
         var service = {
             getTransactions: getTransactions,
+            getTransactionsByCategory: getTransactionsByCategory,
             saveTransaction: saveTransaction,
             deleteTransaction: deleteTransaction
         };
@@ -52,6 +53,28 @@
                 transactions.reverse();
 
                 return transactions;
+            }
+        }
+
+        function getTransactionsByCategory(startDate, endDate) {
+
+            var dateRange = '';
+
+            if (startDate) {
+                var startDateStr = $filter('date')(startDate, 'yyyy-MM-dd', 'UTC');
+                var endDateStr = $filter('date')(endDate, 'yyyy-MM-dd', 'UTC');
+                dateRange = '&startDate=' + startDateStr + '&endDate=' + endDateStr;
+            }
+
+            return $http.get(api + '/transactions?groupByCategory' + dateRange)
+                .then(getTransactionsByCategorySuccess)
+                .catch(function(message) {
+                    exception.catcher('XHR Failed for getTransactions')(message);
+                    $location.url('/');
+                });
+
+            function getTransactionsByCategorySuccess(response) {
+                return response.data;
             }
         }
 

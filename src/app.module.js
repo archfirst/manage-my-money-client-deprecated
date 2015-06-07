@@ -5,10 +5,12 @@
         // Common (everybody has access to these)
         'app.core',
 
-        // Features
-        'app.topnav',
-        'app.dashboard',
+        // Features (listed alphabetically)
         'app.accounts',
-        'app.settings'
+        'app.approot',
+        'app.barchart',
+        'app.dashboard',
+        'app.settings',
+        'app.topnav'
     ]);
 })();

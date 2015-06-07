@@ -1,5 +1,28 @@
-<section id="dashboard-view" class="container-fluid">
+<section id="dashboard-view" class="dashboard container-fluid">
 
-    <h1>Dashboard</h1>
+    <h1>Transactions by Category</h1>
+    <h2 ng-if="vm.startDate">
+        From {{vm.startDate | date : 'M/dd/yyyy' : 'UTC'}} to {{vm.endDate | date : 'M/dd/yyyy' : 'UTC'}}
+    </h2>
+    <h2 ng-if="!vm.startDate">
+        For all time
+    </h2>
+
+    <form name="txnFilterForm" class="form-inline" novalidate>
+        <div class="form-group">
+            <label for="period">Period</label>
+            <select id="period" name="txnFilterForm-period" class="txnFilterForm-period form-control"
+                    ng-model="vm.period" ng-options="period.name for period in vm.periods"
+                    ng-change="vm.getTransactionsByCategory()">
+            </select>
+        </div>
+    </form>
+
+    <div class="dashboard-message alert alert-info" role="alert" ng-if="!vm.chartdata || vm.chartdata.length === 0">
+        No transactions during this period.
+    </div>
+
+    <mmm-barchart data-chartdata="vm.chartdata" ng-if="vm.chartdata && vm.chartdata.length > 0">
+    </mmm-barchart>
 
 </section>

@@ -24,7 +24,9 @@ module.exports = function (config) {
                 'bower_components/angular-ui-router/release/angular-ui-router.js',
                 'bower_components/angular-mocks/angular-mocks.js',
                 'bower_components/bardjs/dist/bard.js',
+                'bower_components/d3/d3.js',
                 'bower_components/lodash/lodash.js',
+                'bower_components/moment/moment.js',
 
                 'test/helpers/*.js',
                 'src/**/*.module.js',

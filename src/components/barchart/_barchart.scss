@@ -1,0 +1,30 @@
+/* ----- BarChart ----- */
+
+mmm-barchart {
+    display: block;
+}
+
+.bar rect {
+    stroke: white;
+    &.pos {
+        fill: #1E985E;
+    }
+    &.neg {
+        fill: #F89F1B;
+    }
+}
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.axis.y path {
+    display: none;
+}
+
+.axis.x path,
+.axis line {
+    fill: none;
+    stroke: #DDD;
+    shape-rendering: crispEdges;
+}

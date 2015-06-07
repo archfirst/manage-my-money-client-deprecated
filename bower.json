@@ -25,6 +25,8 @@
     "angular-toastr": "~1.4.1",
     "angular-ui-router": "~0.2.15",
     "bootstrap-sass": "~3.3.4",
-    "lodash": "~3.9.3"
+    "d3": "~3.5.5",
+    "lodash": "~3.9.3",
+    "moment": "~2.10.3"
   }
 }
