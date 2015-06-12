@@ -3,14 +3,14 @@
     'use strict';
 
     angular.module('app.settings')
-        .directive('mmmSettings', settingsDirective);
+        .directive('mmmSettings', directiveFunction);
 
 
-    // ----- settingsDirective -----
-    settingsDirective.$inject = [];
+    // ----- directiveFunction -----
+    directiveFunction.$inject = [];
 
     /* @ngInject */
-    function settingsDirective() {
+    function directiveFunction() {
 
         var directive = {
             restrict: 'E',

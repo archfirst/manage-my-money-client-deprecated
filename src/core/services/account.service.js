@@ -4,12 +4,12 @@
 
     angular
         .module('app.core')
-        .factory('accountService', accountService);
+        .factory('accountService', serviceFunction);
 
-    accountService.$inject = ['$http', '$location', '$cacheFactory', 'exception', 'api', '_'];
+    serviceFunction.$inject = ['$http', '$location', '$cacheFactory', 'exception', 'api', '_'];
 
     /* @ngInject */
-    function accountService($http, $location, $cacheFactory, exception, api, _) {
+    function serviceFunction($http, $location, $cacheFactory, exception, api, _) {
         var service = {
             getAccounts: getAccounts,
             saveAccount: saveAccount,

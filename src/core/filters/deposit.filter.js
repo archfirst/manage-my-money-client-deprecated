@@ -12,12 +12,12 @@
 
     angular
         .module('app.core')
-        .filter('deposit', formatDeposit);
+        .filter('deposit', filterFunction);
 
-    formatDeposit.$inject = ['$filter'];
+    filterFunction.$inject = ['$filter'];
 
     /* @ngInject */
-    function formatDeposit($filter) {
+    function filterFunction($filter) {
         return function(input) {
             if (input < 0) {
                 return '';

@@ -3,15 +3,15 @@
     'use strict';
 
     angular.module('app.accounts')
-        .directive('mmmTransactionsPanel', transactionsPanelDirective)
-        .controller('TransactionsController', TransactionsController);
+        .directive('mmmTransactionsPanel', directiveFunction)
+        .controller('TransactionsController', ControllerFunction);
 
 
-    // ----- transactionsPanelDirective -----
-    transactionsPanelDirective.$inject = [];
+    // ----- directiveFunction -----
+    directiveFunction.$inject = [];
 
     /* @ngInject */
-    function transactionsPanelDirective() {
+    function directiveFunction() {
 
         var directive = {
             restrict: 'E',
@@ -26,11 +26,11 @@
         return directive;
     }
 
-    // ----- TransactionsController -----
-    TransactionsController.$inject = ['$modal', '$state'];
+    // ----- ControllerFunction -----
+    ControllerFunction.$inject = ['$modal', '$state'];
 
     /* @ngInject */
-    function TransactionsController($modal, $state) {
+    function ControllerFunction($modal, $state) {
         var vm = this;
         vm.addTransaction = addTransaction;
         vm.editTransaction = editTransaction;

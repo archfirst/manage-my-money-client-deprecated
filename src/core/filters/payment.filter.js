@@ -12,12 +12,12 @@
 
     angular
         .module('app.core')
-        .filter('payment', formatPayment);
+        .filter('payment', filterFunction);
 
-    formatPayment.$inject = ['$filter'];
+    filterFunction.$inject = ['$filter'];
 
     /* @ngInject */
-    function formatPayment($filter) {
+    function filterFunction($filter) {
         return function(input) {
             if (input >= 0) {
                 return '';

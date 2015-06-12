@@ -3,14 +3,14 @@
     'use strict';
 
     angular.module('app.accounts')
-        .directive('mmmAccountsPanel', accountsPanelDirective);
+        .directive('mmmAccountsPanel', directiveFunction);
 
 
-    // ----- accountsPanelDirective -----
-    accountsPanelDirective.$inject = [];
+    // ----- directiveFunction -----
+    directiveFunction.$inject = [];
 
     /* @ngInject */
-    function accountsPanelDirective() {
+    function directiveFunction() {
 
         var directive = {
             restrict: 'E',

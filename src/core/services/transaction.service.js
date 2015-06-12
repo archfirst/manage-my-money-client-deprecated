@@ -4,12 +4,12 @@
 
     angular
         .module('app.core')
-        .factory('transactionService', transactionService);
+        .factory('transactionService', serviceFunction);
 
-    transactionService.$inject = ['$http', '$location', '$filter', 'exception', 'api', '_'];
+    serviceFunction.$inject = ['$http', '$location', '$filter', 'exception', 'api', '_'];
 
     /* @ngInject */
-    function transactionService($http, $location, $filter, exception, api, _) {
+    function serviceFunction($http, $location, $filter, exception, api, _) {
         var service = {
             getTransactions: getTransactions,
             getTransactionsByCategory: getTransactionsByCategory,

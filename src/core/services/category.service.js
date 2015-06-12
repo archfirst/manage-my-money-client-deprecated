@@ -4,12 +4,12 @@
 
     angular
         .module('app.core')
-        .factory('categoryService', categoryService);
+        .factory('categoryService', serviceFunction);
 
-    categoryService.$inject = ['$http', '$location', '$cacheFactory', 'exception', 'api', '_'];
+    serviceFunction.$inject = ['$http', '$location', '$cacheFactory', 'exception', 'api', '_'];
 
     /* @ngInject */
-    function categoryService($http, $location, $cacheFactory, exception, api, _) {
+    function serviceFunction($http, $location, $cacheFactory, exception, api, _) {
         var service = {
             getCategories: getCategories,
             saveCategory: saveCategory,

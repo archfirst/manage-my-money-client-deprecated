@@ -3,15 +3,15 @@
     'use strict';
 
     angular.module('app.settings')
-        .directive('mmmCategorySettings', categorySettingsDirective)
-        .controller('CategorySettingsController', CategorySettingsController);
+        .directive('mmmCategorySettings', directiveFunction)
+        .controller('CategorySettingsController', ControllerFunction);
 
 
-    // ----- categorySettingsDirective -----
-    categorySettingsDirective.$inject = [];
+    // ----- directiveFunction -----
+    directiveFunction.$inject = [];
 
     /* @ngInject */
-    function categorySettingsDirective() {
+    function directiveFunction() {
 
         var directive = {
             restrict: 'E',
@@ -23,11 +23,11 @@
         return directive;
     }
 
-    // ----- CategorySettingsController -----
-    CategorySettingsController.$inject = ['logger', 'categoryService'];
+    // ----- ControllerFunction -----
+    ControllerFunction.$inject = ['logger', 'categoryService'];
 
     /* @ngInject */
-    function CategorySettingsController(logger, categoryService) {
+    function ControllerFunction(logger, categoryService) {
 
         var vm = this;
         vm.categories = null;

@@ -3,15 +3,15 @@
     'use strict';
 
     angular.module('app.accounts')
-        .directive('mmmAccounts', accountsDirective)
-        .controller('AccountsController', AccountsController);
+        .directive('mmmAccounts', directiveFunction)
+        .controller('AccountsController', ControllerFunction);
 
 
-    // ----- accountsDirective -----
-    accountsDirective.$inject = [];
+    // ----- directiveFunction -----
+    directiveFunction.$inject = [];
 
     /* @ngInject */
-    function accountsDirective() {
+    function directiveFunction() {
 
         var directive = {
             restrict: 'E',
@@ -24,11 +24,11 @@
     }
 
 
-    // ----- AccountsController -----
-    AccountsController.$inject = ['logger', 'accountService'];
+    // ----- ControllerFunction -----
+    ControllerFunction.$inject = ['logger', 'accountService'];
 
     /* @ngInject */
-    function AccountsController(logger, accountService) {
+    function ControllerFunction(logger, accountService) {
 
         var vm = this;
         vm.accounts = null;

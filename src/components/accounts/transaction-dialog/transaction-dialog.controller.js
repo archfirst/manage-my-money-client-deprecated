@@ -3,15 +3,15 @@
     'use strict';
 
     angular.module('app.accounts')
-        .controller('TransactionDialogController', TransactionDialogController);
+        .controller('TransactionDialogController', ControllerFunction);
 
 
-    // ----- TransactionDialogController -----
-    TransactionDialogController.$inject = [
+    // ----- controllerFunction -----
+    ControllerFunction.$inject = [
         '$modalInstance', 'accountService', 'categoryService', 'transactionService', 'transaction'];
 
     /* @ngInject */
-    function TransactionDialogController(
+    function ControllerFunction(
         $modalInstance, accountService, categoryService, transactionService, transaction) {
         var vm = this;
         vm.title = transaction.id ? 'Edit Transaction' : 'Add Transaction';
