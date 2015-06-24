@@ -14,7 +14,9 @@
 
         var directive = {
             restrict: 'E',
-            templateUrl: 'components/settings/settings.html'
+            templateUrl: 'components/settings/settings.html',
+            scope: {
+            }
         };
 
         return directive;

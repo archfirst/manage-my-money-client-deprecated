@@ -16,6 +16,8 @@
         var directive = {
             restrict: 'E',
             templateUrl: 'components/settings/category-settings/category-settings.html',
+            scope: {
+            },
             controller: 'CategorySettingsController',
             controllerAs: 'vm'
         };

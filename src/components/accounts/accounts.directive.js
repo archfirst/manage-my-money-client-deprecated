@@ -16,6 +16,8 @@
         var directive = {
             restrict: 'E',
             templateUrl: 'components/accounts/accounts.html',
+            scope: {
+            },
             controller: 'AccountsController',
             controllerAs: 'vm'
         };
