@@ -87,8 +87,8 @@
                 payee: txn.payee,
                 memo: txn.memo,
                 amount: txn.amount,
-                account_id: txn.account_id,
-                category_id: txn.category_id
+                account_id: txn.account.id,
+                category_id: txn.category.id
             };
 
             if (!txnXmt.id) {

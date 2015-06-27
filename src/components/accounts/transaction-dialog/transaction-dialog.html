@@ -7,7 +7,7 @@
         <div class="form-group" ng-class="{ 'has-error': transactionForm.account.$invalid && !transactionForm.account.$pristine }">
             <label for="account">Account</label>
             <select id="account" name="account" class="form-control"
-                    ng-model="vm.txn.account_id" ng-options="account.id as account.name for account in vm.accounts" required>
+                    ng-model="vm.txn.account.id" ng-options="account.id as account.name for account in vm.accounts" required>
             </select>
             <p ng-show="transactionForm.account.$invalid && !transactionForm.account.$pristine" class="help-block">
                 Account is required.
@@ -41,7 +41,7 @@
         <div class="form-group" ng-class="{ 'has-error': transactionForm.category.$invalid && !transactionForm.category.$pristine }">
             <label for="category">Category</label>
             <select id="category" name="category" class="form-control"
-                    ng-model="vm.txn.category_id" ng-options="category.id as category.name for category in vm.categories" required>
+                    ng-model="vm.txn.category.id" ng-options="category.id as category.name for category in vm.categories" required>
                 <!-- Workaround for issue in Chrome: https://github.com/angular/angular.js/issues/4836 -->
                 <!-- When selecting with keyboard, the wrong category was being selected -->
                 <option value="">Select One</option>

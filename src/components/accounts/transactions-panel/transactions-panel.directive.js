@@ -42,7 +42,9 @@
             var txn_date = new Date( Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) );
 
             showTransaction({
-                account_id: account_id,
+                account: {
+                    id: account_id
+                },
                 txn_date: txn_date
             });
         }
@@ -68,7 +70,7 @@
 
             modalInstance.result
                 .then( function(transaction) {
-                    $state.go('accounts.detail', { accountId: transaction.account_id }, { reload: true });
+                    $state.go('accounts.detail', { accountId: transaction.account.id }, { reload: true });
                 });
         }
     }
