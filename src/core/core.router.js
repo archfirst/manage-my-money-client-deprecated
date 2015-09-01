@@ -27,26 +27,7 @@
 
             .state('accounts.detail', {
                 url: '/:accountId',
-                /* jshint maxlen:false */
-                /* jscs:disable maximumLineLength */
-                template: '<mmm-transactions-panel class="transactionsPanel" data-account="vm.account"></mmm-transactions-panel>',
-                resolve: {
-                    account: function(transactionService, $stateParams) {
-                        var accountId = parseInt($stateParams.accountId, 0);
-                        return transactionService.getTransactions(accountId)
-                            .then(function(transactions) {
-                                return {
-                                    id: accountId,
-                                    transactions: transactions
-                                };
-                            });
-                    }
-                },
-                // intermediate controller to capture the result of resolve and pass it to the directive
-                controller: ['account', function(account) {
-                    this.account = account;
-                }],
-                controllerAs: 'vm'
+                template: '<mmm-transactions-panel class="transactionsPanel"></mmm-transactions-panel>'
             })
 
             .state('settings', {

@@ -17,7 +17,6 @@
             restrict: 'E',
             templateUrl: 'components/accounts/transactions-panel/transactions-panel.html',
             scope: {
-                account: '='
             },
             controller: 'TransactionsController',
             controllerAs: 'vm'
@@ -27,13 +26,28 @@
     }
 
     // ----- ControllerFunction -----
-    ControllerFunction.$inject = ['$modal', '$state'];
+    ControllerFunction.$inject = ['$modal', '$state', '$stateParams', 'transactionService'];
 
     /* @ngInject */
-    function ControllerFunction($modal, $state) {
+    function ControllerFunction($modal, $state, $stateParams, transactionService) {
         var vm = this;
+        vm.account = null;
         vm.addTransaction = addTransaction;
         vm.editTransaction = editTransaction;
+
+        activate();
+
+        function activate() {
+            var accountId = parseInt($stateParams.accountId, 0);
+            return transactionService.getTransactions(accountId)
+                .then(function(transactions) {
+                    vm.account = {
+                        id: accountId,
+                        transactions: transactions
+                    };
+                    return vm.account;
+                });
+        }
 
         function addTransaction(account_id) {
             // Get today's date in UTC (discard time)
