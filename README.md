@@ -38,7 +38,6 @@ The folder structure is somewhat simplified and flatter compared to John Papa's 
 ```
 /bower_components
 /build
-/mock-server
 /node_modules
 /src
 /test
@@ -47,8 +46,6 @@ The folder structure is somewhat simplified and flatter compared to John Papa's 
 - `bower_components:` Bower components downloaded by `bower install` (do not check in)
 
 - `build:` Production build (do not check in)
-
-- `mock-server:` Used to serve the application during development and also to provide mock data. The real server is intended to be developed as a separate project utilizing best practices for the chosen server-side technology (see the [Node REST Template](https://github.com/archfirst/node-rest-template) for an example). This approach decouples client and server development so that they can progress independently and forces them to define tighter APIs.
 
 - `node_modules:` Node.js modules downloaded by `npm install` (do not check in)
 
@@ -109,25 +106,13 @@ Below this level you will find various folders that arrange the application's fu
 
 ### Testing
 
-- `gulp serve-specs`
-
-    Serves and browses to the spec runner html page and runs the unit tests in it. Injects any changes on the fly and re runs the tests. Quick and easy view of tests as an alternative to terminal via `gulp test`.
-
 - `gulp test`
 
     Runs all unit tests using karma runner, mocha, chai and sinon with phantomjs. Depends on vet task, for code analysis.
 
-- `gulp test --startServers`
-
-    Runs all unit tests and midway tests. Cranks up a second node process to run a server for the midway tests to hit a web api.
-
 - `gulp autotest`
 
     Runs a watch to run all unit tests.
-
-- `gulp autotest --startServers`
-
-    Runs a watch to run all unit tests and midway tests. Cranks up a second node process to run a server for the midway tests to hit a web api.
 
 ### Cleaning Up
 
@@ -183,18 +168,6 @@ Below this level you will find various folders that arrange the application's fu
 
     Serves the development code and launches it in a browser. The goal of building for development is to do it as fast as possible, to keep development moving efficiently. This task serves all code from the source folders and compiles less to css in a temp folder.
 
-- `gulp serve-dev --nosync`
-
-    Serves the development code without launching the browser.
-
-- `gulp serve-dev --debug`
-
-    Launch debugger with node-inspector.
-
-- `gulp serve-dev --debug-brk`
-
-    Launch debugger and break on 1st line with node-inspector.
-
 ### Building Production Code
 
 - `gulp html`
@@ -210,15 +183,3 @@ Below this level you will find various folders that arrange the application's fu
 - `gulp serve-build`
 
     Serve the optimized code from the build folder and launch it in a browser.
-
-- `gulp serve-build --nosync`
-
-    Serve the optimized code from the build folder and manually launch the browser.
-
-- `gulp serve-build --debug`
-
-    Launch debugger with node-inspector.
-
-- `gulp serve-build --debug-brk`
-
-    Launch debugger and break on 1st line with node-inspector.
